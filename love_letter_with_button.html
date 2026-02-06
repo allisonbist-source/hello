@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Prasamsa 💕</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400;600&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(45deg, #ff9a9e 0%, #fecfef 50%, #ffecd2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            overflow: hidden;
+        }
+        
+        .heart-bg {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            overflow: hidden;
+            z-index: 0;
+        }
+        
+        .heart {
+            position: absolute;
+            font-size: 30px;
+            opacity: 0.2;
+            animation: float 12s infinite;
+        }
+        
+        .heart:nth-child(1) { left: 20%; animation-delay: 0s; }
+        .heart:nth-child(2) { left: 50%; animation-delay: 2s; }
+        .heart:nth-child(3) { left: 80%; animation-delay: 4s; }
+        
+        @keyframes float {
+            0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+            10% { opacity: 0.3; }
+            90% { opacity: 0.3; }
+            100% { transform: translateY(-100px) rotate(360deg); opacity: 0; }
+        }
+        
+        .card {
+            background: #fff;
+            max-width: 500px;
+            border-radius: 25px;
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.15);
+            overflow: hidden;
+            animation: slideUp 0.8s ease;
+            position: relative;
+            z-index: 1;
+        }
+        
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045);
+            padding: 25px;
+            text-align: center;
+        }
+        
+        .header-icon {
+            width: 70px;
+            height: 70px;
+            background: #fff;
+            border-radius: 50%;
+            margin: 0 auto 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 35px;
+            animation: bounce 2s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+        }
+        
+        .header h2 {
+            color: #fff;
+            font-family: 'Pacifico', cursive;
+            font-size: 1.6em;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        
+        .content {
+            padding: 35px 30px;
+        }
+        
+        .greeting {
+            font-family: 'Pacifico', cursive;
+            font-size: 1.6em;
+            color: #ff6b9d;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        .message {
+            font-size: 1.05em;
+            line-height: 1.8;
+            color: #555;
+            margin-bottom: 25px;
+        }
+        
+        .highlight {
+            color: #ff4757;
+            font-weight: 600;
+        }
+        
+        .love-button {
+            display: block;
+            margin: 30px auto;
+            padding: 15px 40px;
+            font-size: 1.2em;
+            font-family: 'Pacifico', cursive;
+            background: linear-gradient(135deg, #ff6b9d, #ff4757);
+            color: #fff;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 10px 30px rgba(255, 71, 87, 0.3);
+            transition: all 0.3s ease;
+        }
+        
+        .love-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(255, 71, 87, 0.4);
+        }
+        
+        .love-button:active {
+            transform: scale(0.95);
+        }
+        
+        .signature {
+            text-align: right;
+            font-family: 'Pacifico', cursive;
+            font-size: 1.4em;
+            color: #ff6b9d;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 2px dashed #ffc0cb;
+        }
+        
+        .footer {
+            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+            padding: 18px;
+            text-align: center;
+            font-size: 2em;
+        }
+        
+        .heart-icon {
+            display: inline-block;
+            animation: heartbeat 1.5s infinite;
+        }
+        
+        .heart-icon:nth-child(2) { animation-delay: 0.3s; }
+        .heart-icon:nth-child(3) { animation-delay: 0.6s; }
+        
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1); }
+            25% { transform: scale(1.2); }
+        }
+        
+        /* Heart Balloon Styles */
+        .heart-balloon {
+            position: fixed;
+            font-size: 80px;
+            z-index: 9999;
+            pointer-events: none;
+            animation: flyUp 5s ease-out forwards;
+            filter: drop-shadow(0 5px 15px rgba(255, 0, 0, 0.5));
+        }
+        
+        .balloon-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-family: 'Pacifico', cursive;
+            font-size: 18px;
+            color: #fff;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+            white-space: nowrap;
+            font-weight: bold;
+            background: rgba(255, 0, 0, 0.3);
+            padding: 5px 10px;
+            border-radius: 10px;
+        }
+        
+        @keyframes flyUp {
+            0% {
+                transform: translateY(0) rotate(0deg) scale(0);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+                transform: translateY(-50px) rotate(10deg) scale(1);
+            }
+            100% {
+                transform: translateY(-100vh) rotate(360deg) scale(1.2);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="heart-bg">
+        <div class="heart">💕</div>
+        <div class="heart">💖</div>
+        <div class="heart">💝</div>
+    </div>
+
+    <div class="card">
+        <div class="header">
+            <div class="header-icon">📸</div>
+            <h2>From Instagram to My Heart 💕</h2>
+        </div>
+        
+        <div class="content">
+            <div class="greeting">Hey Prasamsa! 💖</div>
+            
+            <div class="message">
+                I'm so glad I slid into your DMs on Instagram! 😊 Every time I see your posts or chat with you, my whole day gets <span class="highlight">brighter</span>.
+                <br><br>
+                You're not just cute and beautiful – you're <span class="highlight">amazing</span> inside and out. Being around you (even digitally!) feels like magic. ✨
+                <br><br>
+                Just wanted you to know... you make everything better. 💕
+            </div>
+            
+            <button class="love-button" onclick="createHeartBalloons()">I Love You 💕</button>
+            
+            <div class="signature">Rian 💖</div>
+        </div>
+        
+        <div class="footer">
+            <span class="heart-icon">💖</span>
+            <span class="heart-icon">✨</span>
+            <span class="heart-icon">💕</span>
+        </div>
+    </div>
+
+    <script>
+        function createHeartBalloons() {
+            // Create multiple heart balloons
+            for (let i = 0; i < 8; i++) {
+                setTimeout(() => {
+                    const balloon = document.createElement('div');
+                    balloon.className = 'heart-balloon';
+                    
+                    // Random position at bottom of screen
+                    const randomX = Math.random() * window.innerWidth;
+                    balloon.style.left = randomX + 'px';
+                    balloon.style.bottom = '0px';
+                    
+                    // Create heart shape
+                    balloon.innerHTML = '❤️';
+                    
+                    // Create text inside heart
+                    const text = document.createElement('div');
+                    text.className = 'balloon-text';
+                    text.textContent = 'Love u Prasamsa';
+                    balloon.appendChild(text);
+                    
+                    document.body.appendChild(balloon);
+                    
+                    // Remove balloon after animation
+                    setTimeout(() => {
+                        balloon.remove();
+                    }, 5000);
+                }, i * 200); // Stagger the balloons
+            }
+        }
+    </script>
+</body>
+</html>
